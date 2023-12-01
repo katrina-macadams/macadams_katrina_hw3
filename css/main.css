@@ -1,4 +1,14 @@
 
+*{
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
 @font-face {
     font-family: "playfairdisplay";
     src: url("../assets/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
@@ -24,8 +34,13 @@ main {
 header {
     background-color: pink;
     position: sticky;
-    top: 0;
+    padding:10px;
+    margin-bottom: 20px;
     display: flex;
+}
+
+h1 {
+  margin-top: 15px;
 }
 
 header nav {
@@ -67,6 +82,7 @@ article {
 }
 
 article > h2 {
+  margin: 4px 0px;
   padding: 4px 8px;
 }
 
@@ -116,7 +132,6 @@ ul li {
 input[type=checkbox]:checked + span::after {
     content: "✓";
     color: rgb(255, 117, 143);
-    animation: fadeIn 0.3s;
 }
 
 .progress input[type=checkbox]:checked + span::after {
