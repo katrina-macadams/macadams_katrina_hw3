@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Book Store API</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato%7CRaleway" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+<div class="grid-con" id="app">
+    <div class="col-span-full m-col-start-1 m-col-end-13">
+      <h2>Welcome to the World of Tarot</h2>
+      <p>Here you'll find two cards of each Minor Arcana suit and two Major Aracana's</p>
+      <p>Click on a card to find out more about it. </p>
+      <div v-if="loadingBooks">
+        <img src="images/loader.svg" alt="loading indicator" class="loader">
+        <div v-if="selectedCard" id="info-box" :key="selectedCard.name">
+          <img :src="selectedCard.poster" alt="Card image">
+          <h2>{{ selectedCard.name }}</h2>
+          <p>Suit: {{ selectedCard.suit.name }} ({{ selectedCard.suit.element }})</p>
+          <p>Upright: {{ selectedCard.upright }}</p>
+          <p>Reversed: {{ selectedCard.reversed }}</p>
+          <p>Suit Description: {{ selectedCard.suit.description }}</p>
+        </div>
+    <div class="col-span-full m-col-start-1 m-col-end-13" id="bookInfoCon">
+      <div v-if="loading">
+        <img src="images/loader.svg" alt="loading indicator" class="loader">
+      </div>
+        <div v-if="error">{{error}}</div>
+        <div v-if="name" id="info-box" :key="name">
+          <img :src="`images/${image}`">
+          <p><span class="title">Author:</span> {{name}}</p>
+          <p><span class="title">First Published Year:</span> {{published_date}}</p>
+          <p><span class="title">Bio:</span> {{bio}}</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
