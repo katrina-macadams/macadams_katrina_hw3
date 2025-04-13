@@ -1,40 +1,37 @@
-html {
-	scroll-behavior: smooth;
+
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
   }
 
-body {
-	font-family: "Lato", sans-serif;
-	padding: 20px;
-}
-
-#app {
-	padding: 20px;
-}
-
-#bookInfoCon {
-	margin-top: 40px;
-}
-
-h3 {
-	color:crimson;
-}
-
-a {
-	color: black;
-	text-decoration: none;
-}
-
-
-#info-box img {
-	max-width: 100px;
-	margin-bottom: 20px;
-}
-
-.title {
-	font-weight: bold;
-	color: crimson;
-}
-
-.loader {
-	max-width: 100px;
-}
+.card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .card img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .card-info {
+    flex: 1;
+  }
+  
+  .card-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .card-info p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+  }
