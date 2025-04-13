@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-# macadams_katrina_hw3
 =======
 ![Tarot Logo](images/tarot.gif)
 
