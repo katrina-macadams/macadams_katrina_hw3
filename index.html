@@ -18,7 +18,7 @@
     <div class="col-span-full m-col-start-1 m-col-end-13">
       <h2 class="header">Welcome to the World of Tarot</h2>
       <p class="header">Here you'll find two cards of each Minor Arcana suit and two Major Arcana's</p>
-      <p class="header">Hover over a card to find out more.</p>
+      <p class="header">Click the button below each card to reveal its meaning</p>
   
       <!-- Loader -->
       <div v-if="loadingCards">
@@ -26,17 +26,18 @@
       </div>
   
       <!-- Cards Grid -->
-      <div v-else class="card-grid">
+      <div class="card-grid">
         <div
-          v-for="card in cardsData"
+          v-for="(card, index) in cardsData"
           :key="card.id"
           class="card"
         >
           <img :src="'images/' + card.poster" :alt="card.title" />
-          <div class="card-overlay">
+          <div class="card-overlay" :class="{ active: activeCard === index }">
             <h3>{{ card.title }}</h3>
             <p>{{ card.upright }}</p>
           </div>
+          <button class="reveal-btn" @click="toggleOverlay(index)">Reveal Meaning</button>
         </div>
       </div>
     </div>
