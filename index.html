@@ -16,11 +16,9 @@
 <body>
   <div class="grid-con" id="app">
     <div class="col-span-full m-col-start-1 m-col-end-13">
-      <div id="header" class="grid-con">
-      <h1 class="col-span-full">Welcome to the World of Tarot</h1>
-      <h2 class="col-span-full">Here you'll find two cards of each Minor Arcana suit and two Major Arcana's</h2>
-      <p class="col-span-full">Click on a card to find out more about it.</p>
-      </div>
+      <h2 class="header">Welcome to the World of Tarot</h2>
+      <p class="header">Here you'll find two cards of each Minor Arcana suit and two Major Arcana's</p>
+      <p class="header">Hover over a card to find out more.</p>
   
       <!-- Loader -->
       <div v-if="loadingCards">
@@ -31,13 +29,13 @@
       <div v-else class="card-grid">
         <div
           v-for="card in cardsData"
-          :key="card.name"
+          :key="card.id"
           class="card"
         >
-        <img :src="'images/' + card.poster" :alt="card.title" />
-          <div class="card-info">
+          <img :src="'images/' + card.poster" :alt="card.title" />
+          <div class="card-overlay">
             <h3>{{ card.title }}</h3>
-            <p>Upright Meaning: {{ card.upright }}</p>
+            <p>{{ card.upright }}</p>
           </div>
         </div>
       </div>
