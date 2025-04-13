@@ -19,8 +19,9 @@
   <div class="grid-con" id="app">
     <div class="col-span-full m-col-start-1 m-col-end-13">
       <h2 class="header main-title">•───⋅⋆⁺‧₊☽⛦☾₊‧⁺⋆⋅───•</h2>
-      <p class="header">Here you'll find two cards of each Minor Arcana suit and two Major Arcana's</p>
-      <p class="header">Click the button below each card to reveal its meaning</p>
+      <p class="header">Here you'll find two cards of each Minor Arcana suit and two Major Arcana's.</p>
+      <p class="header">Click Reveal Meaning to START and to reveal the upright meaning | Click Flip Card to see the reversed meaning </p>
+      <p class="header">Click Reveal Suit to see information about the Suits</p>
   
       <!-- Loader -->
       <div v-if="loadingCards">
@@ -28,23 +29,29 @@
       </div>
   
       <!-- Cards Grid -->
-      <div class="card-grid">
+      <div class="col-span-full card-grid">
         <div
           v-for="(card, index) in cardsData"
           :key="card.id"
           class="card"
         >
           <img :src="'images/' + card.poster" :alt="card.title" :class="{ flipped: card.isFlipped }" />
+
           <div class="card-overlay" :class="{ active: activeCard === index }">
             <h3>{{ card.title }}</h3>
-            <h4>{{ card.suit_name }}</h4>
-            <p> Element: {{ card.suit_element }}</p>
-            <p>{{ card.suit_description }}</p>
-            <p> Meaning: {{ card.isFlipped ? card.reversed : card.upright }}</p>
+            <div v-if="showSuitInfo === index">
+              <h4>Suit: {{ card.suit_name }}</h4>
+              <p>Element:</strong> {{ card.suit_element }}</p>
+              <p>Description:</strong> {{ card.suit_description }}</p>
+            </div>
+            <div v-else>
+              <p>{{ card.isFlipped ? card.reversed : card.upright }}</p>
+            </div>
           </div>
           <div class="button-group">
             <button class="flip-btn" @click="flipCard(index)">Flip Card</button>
             <button class="reveal-btn" @click="toggleOverlay(index)">Reveal Meaning</button>
+            <button class="suit-btn" @click="toggleSuitInfo(index)">Reveal Suit</button>
           </div>
         </div>
       </div>
