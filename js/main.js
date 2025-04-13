@@ -1,7 +1,7 @@
 const app = Vue.createApp({
     created() {
         // Ideal to get your remote data during the created phase
-        fetch('http://localhost:8888/tarot/public/cards')
+        fetch('http://localhost:8888/tarot-final-example/public/index.php/cards')
             .then(res => res.json())
             .then(data => {
               this.cardsData = data
@@ -29,7 +29,7 @@ const app = Vue.createApp({
         this.error = false;
         const cardInfoCon = document.querySelector("#cardInfoCon");
 
-        fetch(`http://localhost:8888/cardstore-api/public/cards/${id}`)
+        fetch(`http://localhost:8888/tarot-final-example/public/index.php/cards/${id}`)
             .then(res => res.json())
             .then(data => {
               if (data.length > 0) {
