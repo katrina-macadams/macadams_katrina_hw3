@@ -47,15 +47,24 @@ const app = Vue.createApp({
       cardsData: [], 
       loadingCards: true, 
       activeCard: null, 
+      activeSuit: null,
+      showSuitInfo: null,
     };
   },
-  methods: {
-    toggleOverlay(index) {
-      this.activeCard = this.activeCard === index ? null : index;
-    },
-    flipCard(index) {
-      this.cardsData[index].isFlipped = !this.cardsData[index].isFlipped;
+
+ methods: {
+  toggleOverlay(index) {
+    this.activeCard = this.activeCard === index ? null : index;
+    this.showSuitInfo = null; // Reset suit info when toggling overlay
   },
-  
+  flipCard(index) {
+    this.cardsData[index].isFlipped = !this.cardsData[index].isFlipped;
+  },
+  toggleSuitInfo(index) {
+    if (this.activeCard === index) {
+      this.showSuitInfo = this.showSuitInfo === index ? null : index;
+    }
+  },
 },
+
 }).mount('#app');

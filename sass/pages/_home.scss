@@ -1,5 +1,4 @@
-
-body {
+body  {
     margin: 24px 0;
     padding: 14px 0;
     background-color: #ebb7ea;
@@ -19,8 +18,9 @@ body {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 70px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 70px 40px;
+    padding: 40px;
   }
 
 .card {
@@ -82,12 +82,12 @@ body {
   
   .flip-btn,
   .reveal-btn {
-    padding: 5px 10px;
+    padding: 5px 12px;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
     transition: background-color 0.3s ease;
   }
 
@@ -129,13 +129,48 @@ body {
         object-fit: cover; 
       }
       .button-group {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 5px; /* Reduce gap between buttons */
+        flex-direction: column; 
+        gap: 5px; 
       }
     
       .flip-btn,
       .reveal-btn {
-        font-size: 12px; 
+        font-size: 10px; 
         padding: 5px 10px; 
       }
+  }
+
+
+.suit-info {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #4a0849;
+    border-radius: 5px;
+    color: #4a0849;
+    text-align: left;
+  }
+  
+  .suit-info h4 {
+    margin: 0;
+    color: #561d57;
+  }
+  
+  .suit-info p {
+    margin: 5px 0;
+  }
+  
+  .suit-btn {
+    padding: 5px 10px;
+    background-color: #4a0849;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .suit-btn:hover {
+    background-color: #561d57;
   }
