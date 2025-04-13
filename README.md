@@ -71,13 +71,14 @@ There’s no complex setup required — just clone and open.
     - Created database with joined `cards` and `suits` tables
 
 - **v1.1.0 - April 11, 2025**
-    - Added GSAP animations
     - Created responsive layout and UI interactions
     - Hooked up full API integration
 
 - **v1.2.0 - April 13, 2025**
-    - Final UI polish, accessibility enhancements
-    - Scroll-triggered animations and dynamic overlays added
+
+  - Added GSAP animations
+  - Final UI polish, accessibility enhancements
+   - Scroll-triggered animations and dynamic overlays added
 
 > [!NOTE]
 > This application is built as a project assignment and is currently in its first stable version. It may evolve further as a portfolio feature.
@@ -106,4 +107,3 @@ https://greensock.com/
 
 MIT License – Feel free to use for learning and inspiration.
 
----
