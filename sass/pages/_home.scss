@@ -1,16 +1,26 @@
 
 body {
-    margin-top: 24px;
+    margin: 24px 0;
+    padding: 14px 0;
     background-color: #ebb7ea;
 }
 
 .header {
     color: #561d57;
 }
+
+.main-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #561d57;
+    margin-bottom: 20px;
+    opacity: 0; 
+  }
+
 .card-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 60px;
+    gap: 70px;
   }
 
 .card {
@@ -19,17 +29,26 @@ body {
     border-radius: 10px;
     padding: 0;
     cursor: pointer;
+    transition: box-shadow 0.4s ease-in-out;
+  }
+
+  .card:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6); /* Stronger glow on hover */
   }
   
-  .card img {
+
+.card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease;
+  }
+  
+  .card img.flipped {
+    transform: rotateX(180deg);
   }
 
-  
-.card-overlay {
+  .card-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -49,23 +68,74 @@ body {
   }
   
   .card-overlay.active {
-    opacity: 1; 
+    opacity: 1;
     pointer-events: auto;
   }
   
-  .reveal-btn {
-    display: block;
+  
+  /* Button Group */
+  .button-group {
+    display: flex;
+    gap: 10px;
     margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #4a0849;
+  }
+  
+  .flip-btn,
+  .reveal-btn {
+    padding: 5px 10px;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 14px;
     transition: background-color 0.3s ease;
+  }
+
+  .reveal-btn {
+    background-color: #d1ae51;
+  }
+
+  .flip-btn {
+    background-color: #561d57;;
+  }
+
+  .reveal-btn:hover {
+    background-color: #561d57;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); 
   }
   
   .reveal-btn:hover {
+    background-color: #e9c667;
+  }
+  .flip-btn:hover {
     background-color: #561d57;
+  }
+
+  @media screen and (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .card {
+        border: 1px solid #4a0849; 
+        border-radius: 8px; 
+        padding: 5px; 
+      }
+    
+      .card img {
+        height: 200px; 
+        width: 150px;
+        object-fit: cover; 
+      }
+      .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 5px; /* Reduce gap between buttons */
+      }
+    
+      .flip-btn,
+      .reveal-btn {
+        font-size: 12px; 
+        padding: 5px 10px; 
+      }
   }

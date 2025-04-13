@@ -11,7 +11,7 @@ h1 {
 h2 {
     font-family: "Cinzel Decorative", serif;
     font-size: 20px; 
-    margin-bottom: 20px; 
+    margin-bottom: 12px; 
     font-weight: 300;
     text-align: center;
 }
@@ -19,7 +19,15 @@ h2 {
 h3 {
     font-family: "Cinzel Decorative", serif;
     font-size: 14px; 
-    margin-bottom: 20px; 
+    margin-bottom: 12px; 
+    font-weight: 300;
+    text-align: center;
+}
+
+h4 {
+    font-family: "Fondamento", serif;
+    font-size: 18px; 
+    margin-bottom: 8px; 
     font-weight: 300;
     text-align: center;
 }
@@ -29,8 +37,15 @@ p {
     font-weight: 400;
     font-style: normal;
     font-size: 12px; 
-    margin-bottom: 16px; 
+    margin-bottom: 8px; 
     text-align: center;
+}
+
+button {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10px;
 }
 
 
@@ -54,10 +69,20 @@ h3 {
     margin-bottom: 20px; 
 }
 
+h4 {
+    font-family: "Fondamento", serif;
+    font-size: 18px; 
+    margin-bottom: 8px; 
+    font-weight: 300;
+    text-align: center;
+}
+
 p {
     font-family: "Fondamento", serif;
     font-size: 20px; 
-    margin-bottom: 12px; 
+    margin-bottom: 8px; 
 }
+
+
 
 }

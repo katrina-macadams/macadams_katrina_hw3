@@ -10,13 +10,15 @@
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="js/ScrambleTextPlugin.js"></script>
     <script defer type="module" src="js/main.js"></script>
 </head>
 
 <body>
   <div class="grid-con" id="app">
     <div class="col-span-full m-col-start-1 m-col-end-13">
-      <h2 class="header">Welcome to the World of Tarot</h2>
+      <h2 class="header main-title">•───⋅⋆⁺‧₊☽⛦☾₊‧⁺⋆⋅───•</h2>
       <p class="header">Here you'll find two cards of each Minor Arcana suit and two Major Arcana's</p>
       <p class="header">Click the button below each card to reveal its meaning</p>
   
@@ -32,16 +34,20 @@
           :key="card.id"
           class="card"
         >
-          <img :src="'images/' + card.poster" :alt="card.title" />
+          <img :src="'images/' + card.poster" :alt="card.title" :class="{ flipped: card.isFlipped }" />
           <div class="card-overlay" :class="{ active: activeCard === index }">
             <h3>{{ card.title }}</h3>
-            <p>{{ card.upright }}</p>
+            <h4>{{ card.suit_name }}</h4>
+            <p> Element: {{ card.suit_element }}</p>
+            <p>{{ card.suit_description }}</p>
+            <p> Meaning: {{ card.isFlipped ? card.reversed : card.upright }}</p>
           </div>
-          <button class="reveal-btn" @click="toggleOverlay(index)">Reveal Meaning</button>
+          <div class="button-group">
+            <button class="flip-btn" @click="flipCard(index)">Flip Card</button>
+            <button class="reveal-btn" @click="toggleOverlay(index)">Reveal Meaning</button>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
   
 </body>
 </html>
