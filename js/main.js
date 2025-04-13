@@ -55,7 +55,7 @@ const app = Vue.createApp({
  methods: {
   toggleOverlay(index) {
     this.activeCard = this.activeCard === index ? null : index;
-    this.showSuitInfo = null; // Reset suit info when toggling overlay
+    this.showSuitInfo = null; 
   },
   flipCard(index) {
     this.cardsData[index].isFlipped = !this.cardsData[index].isFlipped;
