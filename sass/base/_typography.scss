@@ -1,0 +1,67 @@
+
+h1 {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px; 
+    margin-bottom: 22px; 
+}
+
+h2 {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 24px; 
+    margin-bottom: 20px; 
+    font-weight: 300;
+}
+
+
+p {
+    font-family: "Fondamento", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 14px; 
+}
+
+li a {
+    font-family: v.$h2-font-family;
+    font-size: 18px; 
+    font-weight: 600;
+}
+
+@media screen and (min-width: 744px) {
+
+h1 {
+    font-family: v.$h1-font-family;
+    font-size: 48px; 
+    margin-bottom: 22px; 
+}
+
+h2 {
+    font-family: v.$h2-font-family;
+    font-size: 28px; 
+    margin-bottom: 20px; 
+}
+
+h3 {
+    font-family: v.$h2-font-family;
+    font-size: 24px; 
+    margin-bottom: 18px; 
+}
+
+h4 {
+    font-family: v.$h2-font-family;
+    font-size: 20px; 
+    margin-bottom: 18px; 
+}
+
+p {
+    font-family: v.$p-font-family;
+    margin-bottom: 18px; 
+}
+
+li a {
+    font-family: v.$h2-font-family;
+    font-size: 16px; 
+    font-weight: 600;
+}
+}
