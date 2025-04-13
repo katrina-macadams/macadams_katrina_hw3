@@ -105,5 +105,4 @@ https://greensock.com/
 
 ## 📄 License
 
-MIT License – Feel free to use for learning and inspiration.
-
+MIT License – Feel free to use for learning and inspiration
