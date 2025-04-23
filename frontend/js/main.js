@@ -1,7 +1,7 @@
 const app = Vue.createApp({
   created() {
     // Fetch cards data from the API
-    fetch('http://localhost:8888/macadams_katrina_lumenvue/public/index.php/cards')
+    fetch('http://localhost:8888/macadams_katrina_hw3/macadams_katrina_lumenvue/public/index.php/cards')
       .then(res => res.json())
       .then(data => {
         this.cardsData = data; 
